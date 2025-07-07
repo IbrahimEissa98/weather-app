@@ -182,7 +182,7 @@ async function getIP() {
 }
 async function getLocation() {
   try {
-    var response = await fetch(`http://ip-api.com/json/${ip}`);
+    var response = await fetch(`https://ip-api.com/json/${ip}`);
     var data = await response.json();
     console.log(data);
     latitude = data.lat;
