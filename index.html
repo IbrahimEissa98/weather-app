@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link rel="shortcut icon" href="./images/logo@2x.png" type="image/x-icon" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Michroma&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!-- Style Sheet -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/media.css" />
+  </head>
+  <body>
+    <div class="loader" id="loader"><div class="circle"></div></div>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand m-0" href="#">
+          <img
+            src="./images/logo@2x.png"
+            alt="weather app"
+            width="40"
+            height="30"
+          />
+          <h1>
+            <span class="s1">Weather</span>
+            <span class="">App</span>
+          </h1>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-lg-0 gap-3">
+            <li class="nav-item">
+              <a
+                class="nav-link active menu-icon float-label d-flex flex-column justify-content-center align-items-center"
+                aria-current="page"
+                href="./index.html"
+              >
+                <i class="fa-solid fa-house mb-1"></i>
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link menu-icon float-label d-flex flex-column justify-content-center align-items-center"
+                aria-current="page"
+                href="#"
+              >
+                <i class="fa-solid fa-newspaper mb-1"></i>
+                News
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link menu-icon float-label d-flex flex-column justify-content-center align-items-center"
+                aria-current="page"
+                href="#"
+              >
+                <i class="fa-solid fa-camera mb-1"></i>
+                <span>Live</span>
+                <span>Cameras</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link menu-icon float-label d-flex flex-column justify-content-center align-items-center"
+                aria-current="page"
+                href="#"
+              >
+                <i class="fa-solid fa-images mb-1"></i>
+                Photos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link menu-icon float-label d-flex flex-column justify-content-center align-items-center"
+                aria-current="page"
+                href=""
+              >
+                <i class="fa-solid fa-address-book mb-1"></i>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section class="weather-info p-3">
+      <div
+        class="container-fluid rounded-4 overflow-hidden min-vh-100 position-relative"
+      >
+        <div class="loader-container flex-center d-none">
+          <div class="loader2"></div>
+        </div>
+
+        <div class="row main-row">
+          <div class="left-sec col-md-4 p-5">
+            <div class="search d-flex position-relative" role="search">
+              <input
+                class="form-control ps-5"
+                type="search"
+                placeholder="Search for places..."
+                id="search"
+                aria-label="Search"
+                autocomplete="off"
+              />
+              <i
+                class="fa-solid fa-magnifying-glass-location position-absolute"
+              ></i>
+              <div class="options">
+                <ul class="list-group d-none">
+                  <!-- <li
+                    class="list-group-item list-group-item-action list-group-item-dark"
+                    aria-current="true"
+                  >
+                    <p class="name text-primary m-0">cairo</p>
+                    <div class="">
+                      <span class="region">Al Qahirah</span>
+                      <span class="country">Egypt</span>
+                    </div>
+                  </li> -->
+                </ul>
+              </div>
+            </div>
+
+            <div class="day-weather d-flex flex-column">
+              <!-- <div class="weather-icon w-100">
+                <img
+                  src="https://cdn.weatherapi.com/weather/128x128/night/113.png"
+                  alt="weather icon"
+                  class="d-block m-auto"
+                />
+              </div>
+              <div class="weather-degree">
+                <p>12<sup>&#176;C</sup></p>
+              </div>
+              <div class="day-hour-date">
+                <div>
+                  <span class="day">Monday,</span>
+                  <span class="hour text-white-50 ms-1">16:00</span>
+                </div>
+                <div>
+                  <span class="date">3 July</span>
+                </div>
+              </div>
+              <div class="secondary-info py-5">
+                <div class="mb-3">
+                  <i class="fa-solid fa-cloud"></i> <span>Clear</span>
+                </div>
+                <div>
+                  <i class="fa-solid fa-cloud-showers-heavy"></i>
+                  <span>Rain - 30%</span>
+                </div>
+              </div>
+              <div class="weather-location py-4 px-2 mt-3">
+                <p class="py-5 m-0 text-center">London</p>
+              </div> -->
+            </div>
+          </div>
+
+          <div class="right-sec col-md-8 p-4">
+            <div class="three-days-forecast">
+              <h4>3-days forecast</h4>
+              <div class="row g-3 mt-3">
+                <!-- <div class="col-4">
+                  <div class="inner-day">
+                    <p class="m-0 mb-2">Sun</p>
+                    <img
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt="condition"
+                    />
+                    <p class="m-0 mt-2">
+                      <span>15 <sup>&#176;</sup></span
+                      ><span class="sp2 ms-2">-3 <sup>&#176;</sup></span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="inner-day">
+                    <p class="m-0 mb-2">Mon</p>
+                    <img
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt="condition"
+                    />
+                    <p class="m-0 mt-2">
+                      <span>15 <sup>&#176;</sup></span
+                      ><span class="sp2 ms-2">-3 <sup>&#176;</sup></span>
+                    </p>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="inner-day">
+                    <p class="m-0 mb-2">Tue</p>
+                    <img
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt="condition"
+                    />
+                    <p class="m-0 mt-2">
+                      <span>15 <sup>&#176;</sup></span
+                      ><span class="sp2 ms-2">-3 <sup>&#176;</sup></span>
+                    </p>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="hours24 mt-5">
+              <h4>24-hour forecast</h4>
+              <div class="row g-1 mt-3 flex-nowrap overflow-auto">
+                <!-- <div class="col-3 col-md-2">
+                  <div class="inner-day">
+                    <p class="m-0 mb-1">15 <sup>&#176;</sup></p>
+                    <img
+                      src="https://cdn.weatherapi.com/weather/64x64/day/113.png"
+                      alt="condition"
+                    />
+                    <p class="m-0 mt-1 text-white-50">11.3<sub>km/h</sub></p>
+                    <p class="m-0 mt-1 text-white-50">12:00</p>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+
+            <div class="today-highlights mt-5">
+              <h4>Today's Highlights</h4>
+              <div class="row g-3 mt-3">
+                <!-- <div class="col-12 col-sm-4 col-md-4">
+                  <div
+                    class="inner-highlight d-flex flex-column justify-content-between"
+                  >
+                    <p class="inner-title">Wind Status</p>
+                    <h5 class="">7.70<sub>km/h</sub></h5>
+                    <div class="wind-direction d-flex align-items-center">
+                      <i class="fa-solid fa-compass"></i>
+                      <p class="m-0 ms-2">WSW</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-4">
+                  <div class="inner-highlight">
+                    <p class="inner-title">Sunrise & Sunset</p>
+                    <div class="sun d-flex align-items-center mt-4">
+                      <i class="fa-solid fa-circle-up"></i>
+                      <p class="m-0 ms-2">6:00 AM</p>
+                    </div>
+                    <div class="sun d-flex align-items-center mt-4">
+                      <i class="fa-solid fa-circle-down"></i>
+                      <p class="m-0 ms-2">8:30 PM</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12 col-sm-4 col-md-4">
+                  <div
+                    class="inner-highlight d-flex flex-column justify-content-between"
+                  >
+                    <p class="inner-title">Humidity</p>
+                    <h5 class="">12<sup>%</sup></h5>
+                    <p class="average sub-title">
+                      Average <span class="ms-2 text-white">50</span
+                      ><sup>%</sup>
+                    </p>
+                  </div>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="p-3 pt-0">
+      <div
+        class="inner rounded-4 px-2 py-5 px-lg-5 flex-center flex-column gap-3"
+      >
+        <form action="">
+          <input
+            type="email"
+            class=""
+            placeholder="Enter your email to subscribe..."
+            name="email"
+            id="sub-email"
+          />
+          <button type="submit" class="rounded-2">Subscribe</button>
+        </form>
+        <div class="icons">
+          <ul class="d-flex gap-5">
+            <li>
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-google-plus-g"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-pinterest"></i></a>
+            </li>
+          </ul>
+        </div>
+        <p class="m-0 text-center">
+          Copyright 2025. Designed by Ibrahim Eissa. All rights reserved
+        </p>
+      </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 Script -->
+    <script src="./js/sweetalert2@11.js"></script>
+    <!-- Main Script -->
+    <script src="./js/main.js"></script>
+  </body>
+</html>

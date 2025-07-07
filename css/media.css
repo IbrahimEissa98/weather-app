@@ -1,0 +1,45 @@
+@media (max-width: 991.98px) {
+  /* Nav Start */
+  nav.navbar {
+    position: fixed;
+    left: 16px;
+    right: 16px;
+    top: 0px;
+    bottom: auto;
+    /* margin: 16px 16px 0; */
+  }
+  .navbar .container-fluid {
+    flex-direction: row;
+  }
+  .navbar .container-fluid ul {
+    flex-direction: column;
+    height: 100%;
+    justify-content: end;
+  }
+  .navbar-brand {
+    flex-direction: row;
+    align-items: center;
+  }
+  .navbar-brand h1 {
+    flex-direction: row;
+    margin: 0;
+    margin-left: 10px;
+  }
+  .navbar-brand span {
+    margin-top: 0px;
+  }
+
+  .weather-info {
+    margin-left: 0;
+    margin-top: 55px;
+  }
+
+  /* Footer */
+  footer .inner {
+    margin-left: 0px;
+  }
+  footer form {
+    width: 100%;
+    position: relative;
+  }
+}
