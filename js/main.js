@@ -172,8 +172,8 @@ function chooseOption(places) {
 // Get Location throw ip
 async function getIP() {
   try {
-    const response = await fetch("https://api.ipify.org?format=json");
-    const data = await response.json();
+    var response = await fetch("https://api.ipify.org?format=json");
+    var data = await response.json();
     console.log(`Your IP Address: ${data.ip}`);
     ip = data.ip;
   } catch (error) {
@@ -182,8 +182,8 @@ async function getIP() {
 }
 async function getLocation() {
   try {
-    const response = await fetch(`http://ip-api.com/json/${ip}`);
-    const data = await response.json();
+    var response = await fetch(`http://ip-api.com/json/${ip}`);
+    var data = await response.json();
     console.log(data);
     latitude = data.lat;
     longitude = data.lon;
@@ -195,11 +195,9 @@ async function getLocation() {
 // getIP().then(getLocation);
 // console.log(ip);
 async function getFullLocation() {
-  await getIP()
-    .then(getLocation)
-    .then(function () {
-      getWeather(latitude, longitude);
-    });
+  await getIP();
+    await getLocation();
+    await getWeather(latitude, longitude);
 }
 getFullLocation();
 
