@@ -223,6 +223,7 @@ function displayCurrentDay(res) {
   // console.log(currentDayDate);
 
   var data = `<div class="weather-icon w-100">
+                <h3 class="text-center mt-3">${res.location.name}</h3>
                 <img
                   src="https:${currentDayIcon}"
                   alt="weather icon"
